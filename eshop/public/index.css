@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'BNazanin-ttf';
+    src: url('./Fonts/BNazanin.ttf');
+}
+
+body {
+    font-family: 'BNazanin-ttf';
+}
