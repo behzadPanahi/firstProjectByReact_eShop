@@ -7,7 +7,7 @@ class App extends React.Component {
         return (
             <div>
                 <Layout>
-                    <Shopping></Shopping>
+                    <Shopping/>
                 </Layout>
             </div>
         )
