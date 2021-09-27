@@ -19,7 +19,8 @@ class Shopping extends React.Component {
                 product3: 0,
                 product4: 0
             },
-            totalPrice: 0
+            totalPrice: 0,
+            purchased: false
         }
     }
 
@@ -49,16 +50,27 @@ class Shopping extends React.Component {
             this.setState({ Products: newProducts, totalPrice: newTotal })
         }
     }
+
+    purchasedHandler=()=> {
+        this.setState({ purchased: true })
+    }
+
+    closeModalHandler=()=> {
+        this.setState({ purchased: false })
+    }
     render() {
         return (
             <Wrapper>
-                <Modal>
+                <Modal show={this.state.purchased}
+                closeModal={this.closeModalHandler}
+                >
                     <Order products={this.state.products} />
                 </Modal>
                 <div>
                     <Control productAdd={this.addProductHandler.bind(this)}
                         productRemove={this.removeProductHandler.bind(this)}
                         totalPrice={this.state.totalPrice}
+                        order={this.purchasedHandler}
                     />
                 </div>
             </Wrapper>
