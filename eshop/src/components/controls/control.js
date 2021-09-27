@@ -11,7 +11,7 @@ const Control = (props) => {
     return (
         <div className="controls">
             <div>
-                <p>total price : {props.totalPrice}</p>
+                <p className="price-topic">total price : {props.totalPrice}</p>
             </div>
             {products.map((item) => {
                 return (<Builder key={item.id}
@@ -20,6 +20,7 @@ const Control = (props) => {
                     remove={() => props.productRemove(item.type)}
                 />)
             })}
+            <button className="order-btn">order</button>
         </div>
     )
 }
